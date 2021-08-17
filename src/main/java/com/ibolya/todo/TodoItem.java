@@ -2,15 +2,15 @@ package com.ibolya.todo;
 
 public class TodoItem {
 
-   private Long id;
+   private Integer id;
    private String name;
 
-    public TodoItem(Long id, String name) {
+    public TodoItem(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -18,7 +18,7 @@ public class TodoItem {
         return name;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

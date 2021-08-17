@@ -10,7 +10,7 @@ public class RemoveService {
         this.todoDao = todoDao;
     }
 
-    public void remove(Long id) {
+    public void remove(Integer id) {
         todoDao.remove(id);
     }
 }

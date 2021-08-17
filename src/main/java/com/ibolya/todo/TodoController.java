@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,12 +19,13 @@ public class TodoController {
         this.removeService = removeService;
         this.updateService = updateService;
     }
-
+    @CrossOrigin(origins = "http://localhost:5500/")
     @GetMapping("/todo")
     ResponseEntity<List<TodoItem>> getItems() {
         return ResponseEntity.ok(findService.findItems());
     }
 
+    @CrossOrigin(origins = "http://localhost:5500/")
     @PostMapping("/todo")
     ResponseEntity<TodoItem> addItem(@RequestBody String requestBody) {
         Gson gson = new Gson();
@@ -33,6 +33,7 @@ public class TodoController {
         return ResponseEntity.ok(addService.add(item.getName()));
     }
 
+    @CrossOrigin(origins = "http://localhost:5500/")
     @DeleteMapping("/todo")
     ResponseEntity<Void> removeItem(@RequestBody String requestBody) {
         Gson gson = new Gson();
@@ -41,6 +42,7 @@ public class TodoController {
         return ResponseEntity.ok(null);
     }
 
+    @CrossOrigin(origins = "http://localhost:5500/")
     @PutMapping("/todo")
     ResponseEntity<Void> updateItem(@RequestBody String requestBody) {
         Gson gson = new Gson();
@@ -48,5 +50,4 @@ public class TodoController {
         updateService.update(todoItem.getId(), todoItem.getName());
         return ResponseEntity.ok(null);
     }
-
 }

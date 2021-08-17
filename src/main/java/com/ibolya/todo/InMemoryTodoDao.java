@@ -20,7 +20,7 @@ public class InMemoryTodoDao implements TodoDao {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Integer id) {
         TodoItem todoItem = null;
 
       for(int i = 0 ; i < items.size() ; i++) {
@@ -34,7 +34,7 @@ public class InMemoryTodoDao implements TodoDao {
     }
 
     @Override
-    public void update(Long id, String name) {
+    public void update(Integer id, String name) {
 
         TodoItem todoItem = null;
         int index = 0;

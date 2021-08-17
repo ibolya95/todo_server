@@ -10,7 +10,7 @@ public class UpdateService {
         this.todoDao = todoDao;
     }
 
-   public void update(Long id, String name) {
+   public void update(Integer id, String name) {
        todoDao.update(id, name);
 
 

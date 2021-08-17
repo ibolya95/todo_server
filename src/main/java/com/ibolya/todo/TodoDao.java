@@ -5,6 +5,6 @@ import java.util.List;
 public interface TodoDao {
     void add(TodoItem todoItem);
     List<TodoItem> list();
-    void remove(Long id);
-    void update(Long id, String name);
+    void remove(Integer id);
+    void update(Integer id, String name);
 }
